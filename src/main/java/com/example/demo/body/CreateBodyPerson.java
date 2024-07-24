@@ -1,6 +1,7 @@
 package com.example.demo.body;
 
 public class CreateBodyPerson {
+    private int id;
     private String lastName;
     private String firstName;
     private int age;
@@ -14,7 +15,14 @@ public class CreateBodyPerson {
     public int getAge() {
         return age;
     }
+    public int getId(){
+        return id;
+    }
 
+    
+    public void setId(int id){
+        this.id = id;
+    }
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }

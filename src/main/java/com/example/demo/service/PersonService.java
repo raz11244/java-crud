@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +16,11 @@ public class PersonService {
     @Autowired
     PersonRepository repository;
 
-    public Person info(String id) {
-        return repository.findByID(id).orElseThrow(() -> new EntityNotFoundException("User not found with id " + id));
+    public Person getPerson(Long id) {
+        return repository.findFirstById(id).orElseThrow(() -> new EntityNotFoundException("User not found with id " + id));
     }
     
-    public Person save(CreateBodyPerson body) {
+    public Person creatPerson(CreateBodyPerson body) {
         Person person = new Person();
         person.setLastName(body.getLastName());
         person.setFirstName(body.getFirstName());
@@ -27,5 +28,22 @@ public class PersonService {
         return repository.save(person);
     }
 
-    
+    public List<Person> getAllPersons() {
+        return repository.findAll();
+    }
+
+    public Person updatePerson(Long id, CreateBodyPerson body) {
+        Person person = repository.findById(id).orElseThrow(() -> new EntityNotFoundException("User not found with id " + id));
+        person.setFirstName(body.getFirstName());
+        person.setLastName(body.getLastName());
+        person.setAge(body.getAge());
+        return repository.save(person);
+    }
+
+    public void deletePerson(Long id) {
+        if (!repository.existsById(id)) {
+            throw new EntityNotFoundException("User not found with id " + id);
+        }
+        repository.deleteById(id);
+    }
 }

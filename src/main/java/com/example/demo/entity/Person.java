@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "person")
 public class Person {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,6 +27,14 @@ public class Person {
     }
     
 
+    public long getId(){
+        return id;
+    }
+
+    
+    public void setId(long id){
+        this.id = id;
+    }
     public void setLastName(String lastName){
         this.lastName = lastName;
     }

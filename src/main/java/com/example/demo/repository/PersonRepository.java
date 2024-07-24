@@ -9,5 +9,5 @@ import com.example.demo.entity.Person;
 
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
-    Optional<Person> findByID(String id);
+    Optional<Person> findFirstById(Long id);
 }
