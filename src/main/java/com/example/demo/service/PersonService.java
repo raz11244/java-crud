@@ -25,6 +25,7 @@ public class PersonService {
         person.setLastName(body.getLastName());
         person.setFirstName(body.getFirstName());
         person.setAge(body.getAge());
+        person.setBirthDate(body.getBirthDate());
         return repository.save(person);
     }
 
