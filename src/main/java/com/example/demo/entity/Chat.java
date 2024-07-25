@@ -11,34 +11,20 @@ public class Chat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String sender;
-    private String recipient;
-    private String content;
+    private String message;
     
     
     public Long getId() {
         return id;
     }
-    public String getSender() {
-        return sender;
-    }
-    public String getRecipient() {
-        return recipient;
-    }
-    public String getContent() {
-        return content;
+    public String getMessage() {
+        return message;
     }
     
     public void setId(Long id) {
         this.id = id;
     }
-    public void setSender(String sender) {
-        this.sender = sender;
-    }
-    public void setRecipient(String recipient) {
-        this.recipient = recipient;
-    }
-    public void setContent(String content) {
-        this.content = content;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
