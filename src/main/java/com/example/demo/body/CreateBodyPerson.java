@@ -6,7 +6,6 @@ import java.util.Calendar;
 public class CreateBodyPerson {
     private String lastName;
     private String firstName;
-    private int age;
     private Date birthDate;
     
     public String getLastName() {
@@ -31,9 +30,6 @@ public class CreateBodyPerson {
     }
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
-    }
-    public void setAge(int age) {
-        this.age = age;
     }
 
 
