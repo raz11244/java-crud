@@ -18,7 +18,7 @@ function onConnected() {
     stompClient.subscribe('/topic/public', onMessageReceived);
 }
 
-function onError(error) {
+function onError() {
     connectingElement.textContent = 'connection error';
 }
 
